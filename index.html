@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yegua: Relato Hipertextual</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="contenedor" id="inicio">
+        <h1>Yegua</h1>
+        <p>Estás frente a una hacienda antigua, cargada de ecos. La memoria te lleva a tres momentos: el pasado de tus abuelos, tu infancia, o el presente donde intentas entenderlo todo. ¿Por dónde empiezas?</p>
+        <div class="opciones">
+            <a href="#hacienda" onclick="mostrarEscena('hacienda')">La hacienda de los abuelos</a>
+            <a href="#infancia" onclick="mostrarEscena('infancia')">Tu infancia</a>
+            <a href="#presente" onclick="mostrarEscena('presente')">Tus reflexiones en el presente</a>
+        </div>
+    </div>
+
+    <div id="hacienda" class="escena" style="display:none;">
+        <h2>La hacienda</h2>
+        <p>El aire huele a tierra húmeda y silencio. Los abuelos discuten en la penumbra, y algo en sus voces sugiere un secreto enterrado. ¿Qué haces?</p>
+        <div class="opciones">
+            <a href="#secreto" onclick="mostrarEscena('secreto')">Indagar en el secreto</a>
+            <a href="#inicio" onclick="mostrarEscena('inicio')">Volver al inicio</a>
+        </div>
+     </div>
+
+   <div id="infancia" class="escena" style="display:none;">
+    <h2>Tu infancia</h2>
+    <p>Recuerdos fragmentados vuelven: risas, juegos, pero también silencios pesados y miradas esquivas de los adultos. Algo no estaba bien. ¿Qué exploras?</p>
+    <div class="opciones">
+        <a href="#" onclick="reproducirPichiCarcajada()">Escuchar los susurros</a>
+        <a href="#inicio" onclick="mostrarEscena('inicio')">Volver al inicio</a>
+    </div>
+    <audio id="audioPichi" src="audio/1.mp3.mp3" style="display:none;"></audio>
+</div>
+
+    <div id="presente" class="escena" style="display:none;">
+        <h2>El presente</h2>
+        <p>Mirando fotos viejas, intentas unir los fragmentos. La violencia de la hacienda y los silencios de tu infancia te persiguen. ¿Qué reflexionas?</p>
+        <div class="opciones">
+            <a href="#conclusion" onclick="mostrarEscena('conclusion')">Llegar a una conclusión</a>
+            <a href="#inicio" onclick="mostrarEscena('inicio')">Volver al inicio</a>
+        </div>
+    </div>
+
+    <div id="secreto" class="escena" style="display:none;">
+    <h2>Indagar en el secreto</h2>
+    <p>Aquí podrías revelar algo profundo.</p>
+    <div id="imagenContenedor" style="display:none;">
+        <img id="imagenSecreta" src="" alt="Secreto revelado" style="max-width:100%; height:auto;">
+    </div>
+    <div class="opciones">
+        <a href="#" onclick="mostrarImagen()">Indagar en el secreto</a>
+        <a href="#inicio" onclick="mostrarEscena('inicio')">Volver al inicio</a>
+    </div>
+</div>
+
+    <div id="susurros" class="escena" style="display:none;">
+        <h2>Susurros en la infancia</h2>
+        <p>Los adultos hablaban de un castigo en la hacienda. El miedo estaba en sus ojos. ¿Sigues investigando?</p>
+        <a href="#inicio" onclick="mostrarEscena('inicio')">Volver al inicio</a>
+    </div>
+
+    <div id="conclusion" class="escena" style="display:none;">
+    <h2>Conclusión</h2>
+    <p>Tras explorar los recuerdos y los susurros, llegas a un punto de cierre. ¿Estás listo para ver la resolución?</p>
+    <div class="opciones">
+        <a href="docs/VF.pdf.pdf" target="_blank" onclick="mostrarEscena('inicio')">Llegar a una conclusión</a>
+        <a href="#inicio" onclick="mostrarEscena('inicio')">Volver al inicio</a>
+    </div>
+    
+    </div>
+
+   <script src="script.js"></script>
+</body>
+</html>
